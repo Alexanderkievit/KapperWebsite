@@ -1087,3 +1087,15 @@ h1, h2, h3, h4, h5,
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2); }
+
+.prijzen_links {
+  text-align: left !important;
+}
+
+.prijzen_rechts {
+  text-align: right !important;
+}
+
+.reserveer_nu {
+  color: #000;
+}
