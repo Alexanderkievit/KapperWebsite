@@ -112,23 +112,51 @@
       </div>  
 
 <!-- Afspraak maken -->
-      <div>
+      <div class="afspraak_maken">
         <div class="geslacht_optie">
-        <h4>Kies geslacht</h4>
-          <select>
-            <option value="Selecteer">- Selecteer -</option>
-            <option value="man">Man</option>
-            <option value="vrouw">Vrouw</option>
-            <option value="overig">Overig</option>
+        <h4>Kies categorie</h4>
+          <input id="vrouw" type="radio" name="geslacht" value="vrouw"> Vrouw<br>
+          <input id="man" type="radio" name="geslacht" value="man"> Man<br>
+          <input id="overig" type="radio" name="geslacht" value="overig"> Overig<br>        
+        </div>
+          <!-- <br></br>  -->
+        <div id="behandeling_optie" class="behandeling_optie">
+          <h4>Kies behandeling</h4>
+          <select id="vrouw_choise" class="vrouw_choise" style="width: 304px;">
+            <option class="midden" value="selecteer">- Selecteer -</option>
+            <option value="one_choise_vrouw">Wassen / knippen / drogen</option>
+            <option value="two_choise_vrouw">Wassen / Knippen / föhnen</option>
+            <option value="three_choise_vrouw">Wassen / model föhnen</option>
+            <option value="four_choise_vrouw">Wassen / stylen</option>
+            <option value="five_choise_vrouw">Kleuren, nieuwe basiskleur</option>
+            <option value="six_choise_vrouw">Kleuren, high-/lowlights</option>
+          </select>
+            <br>
+          <select id="man_choise" class="man_choise" style="width: 304px;">
+            <option value="selecteer">- Selecteer -</option>
+            <option value="one_choise_man">Wassen / knippen / drogen</option>
+            <option value="two_choise_man">Tondeuse</option>
+            <option value="three_choise_man">Opscheren en contouren bijwerken</option>
+            <option value="four_choise_man">Baard knipper/scheren</option>
+          </select>
+            <br>
+          <select id="overig_choise" class="overig_choise" style="width: 304px;">
+            <option value="selecteer">- Selecteer -</option>
+            <option value="one_choise_overig">Kinderen</option>
+            <option value="two_choise_overig">Masker</option>
+            <option value="three_choise_overig">Wassen</option>
+            <option value="four_choise_overig">Cadeaukaart</option>
           </select>
         </div>
-
-        <div class="behandeling_optie">
-          <select>
-            <option value=""></option>
-          </select>
-
+           <!-- <br></br> -->
+        <div id="kapper_optie" class="kapper_optie">
+          <h4>Kies kapper</h4>
+          <input id="sigrid" type="radio" name="kapper" value="sigrid"> Sigrid<br>
+          <input id="daniëlle" type="radio" name="kapper" value="daniëlle"> Daniëlle<br>
+          <input id="sabine" type="radio" name="kapper" value="sabine"> Sabine<br>
+          <input id="jason" type="radio" name="kapper" value="jason"> Jason<br>
         </div>
+
       </div>
 
 
@@ -193,6 +221,7 @@
   <script src="js/aos.js"></script>
 
   <script src="js/main.js"></script>
-    
+  <script src="js/reservering.js"></script>  
+
   </body>
 </html>

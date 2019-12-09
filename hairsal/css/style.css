@@ -1099,3 +1099,23 @@ h1, h2, h3, h4, h5,
 .reserveer_nu {
   color: #000;
 }
+
+.geslacht_optie{
+  color: #000;
+  background-color: #8BC34A;
+  padding: 20px 0px 20px 20px;
+}
+.kapper_optie {
+  color: #000;
+  background-color: #8BC34A;
+  padding: 20px 0px 20px 20px;
+}
+.behandeling_optie {
+  padding: 20px 0px 20px 20px;
+}
+.afspraak_maken {
+  text-align: auto;
+}
+.midden {
+  text-align-last: center;
+}
