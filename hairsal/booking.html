@@ -19,12 +19,12 @@
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
-
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/style.css">
-    
+    <!-- Date, Time picker -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1.css.bootstrap.min.css" rel="stylesheet">
+    <link href="reservering/jquery.datetimepicker.min.css" rel="stylesheet">
+
   </head>
   <body>
   
@@ -113,51 +113,84 @@
 
 <!-- Afspraak maken -->
       <div class="afspraak_maken">
-        <div class="geslacht_optie">
-        <h4>Kies categorie</h4>
-          <input id="vrouw" type="radio" name="geslacht" value="vrouw"> Vrouw<br>
-          <input id="man" type="radio" name="geslacht" value="man"> Man<br>
-          <input id="overig" type="radio" name="geslacht" value="overig"> Overig<br>        
-        </div>
-          <!-- <br></br>  -->
-        <div id="behandeling_optie" class="behandeling_optie">
-          <h4>Kies behandeling</h4>
-          <select id="vrouw_choise" class="vrouw_choise" style="width: 304px;">
-            <option class="midden" value="selecteer">- Selecteer -</option>
-            <option value="one_choise_vrouw">Wassen / knippen / drogen</option>
-            <option value="two_choise_vrouw">Wassen / Knippen / föhnen</option>
-            <option value="three_choise_vrouw">Wassen / model föhnen</option>
-            <option value="four_choise_vrouw">Wassen / stylen</option>
-            <option value="five_choise_vrouw">Kleuren, nieuwe basiskleur</option>
-            <option value="six_choise_vrouw">Kleuren, high-/lowlights</option>
-          </select>
-            <br>
-          <select id="man_choise" class="man_choise" style="width: 304px;">
-            <option value="selecteer">- Selecteer -</option>
-            <option value="one_choise_man">Wassen / knippen / drogen</option>
-            <option value="two_choise_man">Tondeuse</option>
-            <option value="three_choise_man">Opscheren en contouren bijwerken</option>
-            <option value="four_choise_man">Baard knipper/scheren</option>
-          </select>
-            <br>
-          <select id="overig_choise" class="overig_choise" style="width: 304px;">
-            <option value="selecteer">- Selecteer -</option>
-            <option value="one_choise_overig">Kinderen</option>
-            <option value="two_choise_overig">Masker</option>
-            <option value="three_choise_overig">Wassen</option>
-            <option value="four_choise_overig">Cadeaukaart</option>
-          </select>
-        </div>
-           <!-- <br></br> -->
-        <div id="kapper_optie" class="kapper_optie">
-          <h4>Kies kapper</h4>
-          <input id="sigrid" type="radio" name="kapper" value="sigrid"> Sigrid<br>
-          <input id="daniëlle" type="radio" name="kapper" value="daniëlle"> Daniëlle<br>
-          <input id="sabine" type="radio" name="kapper" value="sabine"> Sabine<br>
-          <input id="jason" type="radio" name="kapper" value="jason"> Jason<br>
-        </div>
+        
+          <div class="behandelings_optie reserveer_nu">
+              <h2>Kies uw behandeling</h2>
+            <select id="keuzes" class="keuzes" style="height: 30px; width: 305px;">
+              <option value="selecteer">- Selecteer -</option>
+              <option disabled class="niet_klikken">- Vrouw -</option>
+              <option id="normale_kapper" class="normale_kapper" value="one_choise_vrouw" >Wassen / knippen / drogen</option>
+              <option id="normale_kapper" class="normale_kapper" value="two_choise_vrouw">Wassen / Knippen / föhnen</option>
+              <option id="normale_kapper" value="three_choise_vrouw">Wassen / model föhnen</option>
+              <option id="normale_kapper" value="four_choise_vrouw">Wassen / stylen</option>
+              <option id="kleuren_kapper" value="five_choise_vrouw">Kleuren, nieuwe basiskleur</option>
+              <option id="kleuren_kapper" value="six_choise_vrouw">Kleuren, high-/lowlights</option>
+              <option disabled class="niet_klikken">- Man -</option>
+              <option id="normale_kapper" value="one_choise_man">Wassen / knippen / drogen</option>
+              <option id="normale_kapper" value="two_choise_man">Tondeuse</option>
+              <option id="normale_kapper" value="three_choise_man">Opscheren en contouren bijwerken</option>
+              <option id="normale_kapper" value="four_choise_man">Baard knipper/scheren</option>
+              <option disabled class="niet_klikken">- Overig -</option>
+              <option id="normale_kapper" value="one_choise_overig">Kinderen</option>
+              <option id="normale_kapper" value="two_choise_overig">Masker</option>
+              <option id="normale_kapper" value="three_choise_overig">Wassen</option>
+            </select>
+          </div>
 
+          <div id="kapper_optie" class="kapper_optie reserveer_nu">
+            <h2>Kies uw kapper</h2>
+            <div id="sigrid"><input type="radio" name="kapper" value="sigrid"> Sigrid<br></div>
+            <div id="daniëlle"><input type="radio" name="kapper" value="daniëlle"> Daniëlle<br></div>
+            <div id="sabine"><input type="radio" name="kapper" value="sabine"> Sabine<br></div>
+            <div id="jason"><input type="radio" name="kapper" value="jason"> Jason<br></div>
+          </div>
+
+          <div class="gegevens reserveer_nu">
+            <h2>Maak uw afspraak</h2>
+            <div class="iets">
+              <form>
+                  <div class="voornaam">
+                      <label class="kop">Voornaam: *</label><br>
+                      <input type="text" name="voornaam" required><br>
+                  </div>
+                  <div class="achternaam">
+                      <label class="kop">Achternaam: *</label><br>
+                      <input type="text" name="achternaam" required><br>
+                  </div>
+                  <div class="email">
+                      <label class="kop">Email: * </label><br>
+                      <input type="text" name="email" required><br>
+                  </div>
+                  <div class="telefoonnummer">
+                    <label class="kop">Telefoonnummer: *</label><br>
+                    <input type="text" name="telefoonnummer" required><br>
+                  </div>
+
+                  <div class="datum_tijd">
+                    <label class="kop">Datum en tijd *</label><br>
+                    <input type="text" id="picker" class="form-control" style="width: 206px; height: 33px;" required>
+                  </div>
+
+
+
+                  <div class="verplicht">
+                    <h7>* Betekend verpicht</h7>
+                  </div>
+                  <div class="submit">
+                    <input type="submit" value="Afspraak maken">
+                  </div>
+                  </form>
+              </div>
+          </div>
       </div>
+
+      
+
+      </div>  
+
+
+
+
 
 
 
@@ -219,9 +252,29 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/bootstrap-datepicker.min.js"></script>
   <script src="js/aos.js"></script>
-
   <script src="js/main.js"></script>
-  <script src="js/reservering.js"></script>  
+  <script src="reservering/reservering.js"></script> 
+   <!--Date, Time picker  -->
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <script src="reservering/jquery.datetimepicker.full.min.js"></script>
+   <script>
+       $('#picker').datetimepicker({
+           timepicker: true,
+           datepicker: true,
+           format: 'd-m-Y H:i', //formatTime
+           value: '1-2-2020 12:00', // defaultTime
+           hours24: true, 
+           step: 30,
+           allowTimes: ['12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '16:00', '16:30', '17:00', '17:30', '18:00', '19:00', '19:30', '20:00', '20:30'],
+          //  allowDates: ['2020-02-01', '2020-02-03', '04-02-2020', '05-02-2020'],
+           yearStart: 2020,
+           yearEnd: 2023,
+           monthStart: 01,
+       })
+   
+   </script>
 
   </body>
 </html>
