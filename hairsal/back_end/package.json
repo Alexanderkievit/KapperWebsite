@@ -1,0 +1,19 @@
+{
+  "name": "kapper",
+  "version": "1.0.0",
+  "description": "Dit is mijn website van mijn kapper.\r Veel plezier met kijken!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexanderkievit/KapperWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alexanderkievit/KapperWebsite/issues"
+  },
+  "homepage": "https://github.com/Alexanderkievit/KapperWebsite#readme"
+}
