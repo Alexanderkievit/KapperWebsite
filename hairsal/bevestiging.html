@@ -19,13 +19,12 @@
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Date, Time picker -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1.css.bootstrap.min.css" rel="stylesheet">
-    <link href="reservering/jquery.datetimepicker.min.css" rel="stylesheet">
 
-    <script src="js/myscripts.js"></script>
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
   </head>
   <body>
   
@@ -39,10 +38,7 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-    
-
-
-
+<!-- Header -->
     <header class="site-navbar py-1" role="banner">
 
       <div class="container-fluid">
@@ -56,7 +52,7 @@
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="index.html">Home</a></li>
-                   <li class="has-children">
+                <li class="has-children active">
                   <a>Behandeling</a>
                   <ul class="dropdown">
                     <li><a href="kappers.html">Kappers</a></li>
@@ -64,7 +60,7 @@
                   </ul>
                 </li>
                 <li><a href="about.html">Over ons</a></li>
-                <li class="active"><a href="booking.html">Afspraak</a></li>
+                <li><a href="booking.html">Afspraak</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="account.html">Mijn account</a></li>
               </ul>
@@ -105,99 +101,49 @@
           <div class="row align-items-center justify-content-center text-center">
 
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h2 class="text-white font-weight-light mb-2 display-1">Maak je afspraak</h2>
-
+              <h2 class="text-white font-weight-light mb-4 display-1 line-height-1">Afspraak</h2>
             </div>
           </div>
         </div>
       </div>  
 
-<!-- Afspraak maken -->
-      <div class="afspraak_maken">
-        
-          <div class="behandelings_optie reserveer_nu">
-              <h2>Kies uw behandeling</h2>
-            <select id="keuze_behandeling" class="keuzes" style="height: 30px; width: 305px;">
-              <option value="selecteer">- Selecteer -</option>
-              <option disabled class="niet_klikken">- Vrouw -</option>
-              <option id="normale_kapper" value="wassen_knippen_drogen_vrouw" >Wassen / knippen / drogen</option>
-              <option id="normale_kapper" value="wassen_knippen_föhnen_vrouw">Wassen / Knippen / föhnen</option>
-              <option id="normale_kapper" value="wassen_model_föhnen_vrouw">Wassen / model föhnen</option>
-              <option id="normale_kapper" value="wassen_stylen_vrouw">Wassen / stylen</option>
-              <option id="kleuren_kapper" value="kleuren_nieuwe_basiskleur_vrouw">Kleuren, nieuwe basiskleur</option>
-              <option id="kleuren_kapper" value="kleuren_high_lowlights_vrouw">Kleuren, high-/lowlights</option>
-              <option disabled class="niet_klikken">- Man -</option>
-              <option id="normale_kapper" value="wassen_knippen_drogen_man">Wassen / knippen / drogen</option>
-              <option id="normale_kapper" value="tondeuse_man">Tondeuse</option>
-              <option id="normale_kapper" value="opscheren_en_contouren_bijwerken_man">Opscheren en contouren bijwerken</option>
-              <option id="normale_kapper" value="baard_knippen_scheren_man">Baard knippen / scheren</option>
-              <option disabled class="niet_klikken">- Overig -</option>
-              <option id="normale_kapper" value="kinderen">Kinderen</option>
-              <option id="normale_kapper" value="masker">Masker</option>
-              <option id="normale_kapper" value="wassen">Wassen</option>
-            </select>
+
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <h3 class="line-height-1 mb-3"><span class="d-block display-4 line-height-1 text-black">Uw gegevens en afspraak</span></h3>
+            <div class="reserveer_nu">
+                <form>
+                    <label class="kop">Voornaam: </label><br>
+                    <input type="text" readonly><br>
+
+                    <label class="kop">Achternaam: </label><br>
+                    <input type="text" readonly><br>
+
+                    <label class="kop">Email: </label><br>
+                    <input type="text" readonly><br>
+
+                    <label class="kop">Telefoonnummer: </label><br>
+                    <input type="number" readonly><br>
+
+                    <label class="kop">Behandeling: </label><br>
+                    <input type="text" readonly><br>
+
+                    <label class="kop">Kapper: </label><br>
+                    <input type="text" readonly><br>
+
+                    <label class="kop">Datum en tijd: </label><br>
+                    <input type="datetime" readonly><br>
+                    <br>
+                    <h4>Bedankt voor u afspraak. U krijgt nog een mailtje met een bevestiging toegestuurd.</h4>
+                    <br>
+                </form>
+            </div>
           </div>
-
-          <div class="kapper_optie reserveer_nu">
-              <h2>Kies uw kapper</h2>
-            <form id="keuze_kapper">
-                <input type="radio" name="kapper" value="sigrid"> Sigrid<br>
-                <input type="radio" name="kapper" value="daniëlle"> Daniëlle<br>
-                <input type="radio" name="kapper" value="sabine"> Sabine<br>
-                <input type="radio" name="kapper" value="jason"> Jason<br>
-            </form>
-          </div>
-
-
-          <div class="gegevens reserveer_nu">
-            <h2>Maak uw afspraak</h2>
-            <div class="iets">
-              <form action="bevestiging.html">
-                  <div class="voornaam">
-                      <label class="kop">Voornaam: <font color="red">*</font></label><br>
-                      <input id="voornaam" type="text" name="voornaam" required><br>
-                  </div>
-                  <div class="achternaam">
-                      <label class="kop">Achternaam: <font color="red">*</font></label><br>
-                      <input id="achternaam"type="text" name="achternaam" required><br>
-                  </div>
-                  <div class="email">
-                      <label class="kop">Email: <font color="red">*</font></label><br>
-                      <input id="email" type="text" name="email" required><br>
-                  </div>
-                  <div class="telefoonnummer">
-                    <label class="kop">Telefoonnummer: <font color="red">*</font></label><br>
-                    <input id="telefoonnummer" type="number" name="telefoonnummer" required><br>
-                  </div>
-
-
-                  <div class="datum_tijd"> 
-                    <label class="kop">Datum en tijd: <font color="red">*</font></label><br>
-                    <input type="text" id="picker" class="form-control" style="width: 206px; height: 33px;" required>
-                  </div>
-
-
-
-                  <div class="verplicht">
-                    <h7>* Betekend verpicht</h7>
-                  </div>
-                  <div class="submit">
-                    <input type="submit" value="Afspraak maken" onclick="maak_afspraak();">
-                  </div>
-              </form>
-              </div>
-          </div>
-      </div>
-
-      
-
-      </div>  
-
-
-
-
-
-
+        </div>
+    </div>
 
 
     <footer class="site-footer">
@@ -222,9 +168,9 @@
                   <li><a href="contact.html">Contact</a></li>
                 </ul>
               </div>
-            </div>       
-          </div>        
-          
+            </div>
+          </div>
+
         </div>
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
@@ -240,7 +186,6 @@
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
-          
         </div>
       </div>
     </footer>
@@ -257,29 +202,8 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/bootstrap-datepicker.min.js"></script>
   <script src="js/aos.js"></script>
-  <script src="js/main.js"></script>
-  <script src="reservering/reservering.js"></script> 
-   <!--Date, Time picker  -->
-   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-   <script src="reservering/jquery.datetimepicker.full.min.js"></script>
-   <script>
-       $('#picker').datetimepicker({
-           timepicker: true,
-           datepicker: true,
-           format: 'd-m-Y H:i', //formatTime
-           value: '1-2-2020 12:00', // defaultTime
-           hours24: true, 
-           step: 30,
-           allowTimes: ['12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '16:00', '16:30', '17:00', '17:30', '18:00', '19:00', '19:30', '20:00', '20:30'],
-          //  allowDates: ['2020-02-01', '2020-02-03', '04-02-2020', '05-02-2020'],
-           yearStart: 2020,
-           yearEnd: 2023,
-           monthStart: 01,
-       })
-   
-   </script>
 
+  <script src="js/main.js"></script>
+    
   </body>
 </html>

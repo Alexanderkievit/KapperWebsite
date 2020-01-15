@@ -5,7 +5,8 @@ module.exports = {
             host: 'localhost',
             user: 'alexander',
             password: 'root',
-            port: 3306
+            port: 3306,
+            database: 'kappersapp'
         });
         pool.getConnection()
             .then(conn => {
@@ -15,7 +16,8 @@ module.exports = {
                 let keuze_kapper = data["keuze_kapper"];
                 let email = data["email"];
                 let telefoonnummer = data["telefoonnummer"];
-                conn.query("INSERT INTO afspraak(first_name, last_name, keuze_behandeling, keuze_kapper, email, telefoonnummer) values (?, ?, ?, ?, ?, ?)", [first_name, last_name, keuze_behandeling, keuze_kapper, email, telefoonnummer]);
+                let datum_tijd = data["datum_tijd"];
+                conn.query("INSERT INTO afspraak(first_name, last_name, keuze_behandeling, keuze_kapper, email, telefoonnummer, datum_tijd) values (?, ?, ?, ?, ?, ?, ?)", [first_name, last_name, keuze_behandeling, keuze_kapper, email, telefoonnummer, datum_tijd]);
                 conn.end();
             })
             .catch((error) => {
