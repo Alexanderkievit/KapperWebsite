@@ -15,7 +15,7 @@ app.use(express.static('./hairsal'))
 
 app.post('/afspraak', function(req, res) {
     var first_name = req.body.first_name;
-    console.log(first_name);
+    console.log('Gelukt lekker bezig pik');
     script.insert_afspraak(req.body);
     res.json({'binnen': 'binn bericht'});
 });
