@@ -117,34 +117,34 @@
         
           <div class="behandelings_optie reserveer_nu">
               <h2>Kies uw behandeling</h2>
-            <select id="keuze_behandeling" class="keuzes" style="height: 30px; width: 305px;">
+            <select id="keuze_behandeling" class="keuzes" style="height: 30px; width: 305px;" required>
               <option value="selecteer">- Selecteer -</option>
               <option disabled class="niet_klikken">- Vrouw -</option>
-              <option id="normale_kapper" value="wassen_knippen_drogen_vrouw" >Wassen / knippen / drogen</option>
-              <option id="normale_kapper" value="wassen_knippen_föhnen_vrouw">Wassen / Knippen / föhnen</option>
-              <option id="normale_kapper" value="wassen_model_föhnen_vrouw">Wassen / model föhnen</option>
-              <option id="normale_kapper" value="wassen_stylen_vrouw">Wassen / stylen</option>
-              <option id="kleuren_kapper" value="kleuren_nieuwe_basiskleur_vrouw">Kleuren, nieuwe basiskleur</option>
-              <option id="kleuren_kapper" value="kleuren_high_lowlights_vrouw">Kleuren, high-/lowlights</option>
+              <option id="normale_kapper" value="Wassen knippen drogen vrouw" >Wassen / knippen / drogen</option>
+              <option id="normale_kapper" value="Wassen knippen föhnen">Wassen / Knippen / föhnen</option>
+              <option id="normale_kapper" value="Wassen model föhnen">Wassen / model föhnen</option>
+              <option id="normale_kapper" value="Wassen stylen">Wassen / stylen</option>
+              <option id="kleuren_kapper" value="Kleuren nieuwe basiskleur">Kleuren, nieuwe basiskleur</option>
+              <option id="kleuren_kapper" value="Kleuren high-/lowlights">Kleuren, high-/lowlights</option>
               <option disabled class="niet_klikken">- Man -</option>
-              <option id="normale_kapper" value="wassen_knippen_drogen_man">Wassen / knippen / drogen</option>
-              <option id="normale_kapper" value="tondeuse_man">Tondeuse</option>
-              <option id="normale_kapper" value="opscheren_en_contouren_bijwerken_man">Opscheren en contouren bijwerken</option>
-              <option id="normale_kapper" value="baard_knippen_scheren_man">Baard knippen / scheren</option>
+              <option id="normale_kapper" value="Wassen knippen drogen man">Wassen / knippen / drogen</option>
+              <option id="normale_kapper" value="Tondeuse">Tondeuse</option>
+              <option id="normale_kapper" value="Opscheren en contouren bijwerken">Opscheren en contouren bijwerken</option>
+              <option id="normale_kapper" value="Baard knippen scheren">Baard knippen / scheren</option>
               <option disabled class="niet_klikken">- Overig -</option>
-              <option id="normale_kapper" value="kinderen">Kinderen</option>
-              <option id="normale_kapper" value="masker">Masker</option>
-              <option id="normale_kapper" value="wassen">Wassen</option>
+              <option id="normale_kapper" value="Kinderen">Kinderen</option>
+              <option id="normale_kapper" value="Masker">Masker</option>
+              <option id="normale_kapper" value="Wassen">Wassen</option>
             </select>
           </div>
 
           <div class="kapper_optie reserveer_nu">
               <h2>Kies uw kapper</h2>
             <form id="keuze_kapper">
-                <input type="radio" name="kapper" value="sigrid"> Sigrid<br>
-                <input type="radio" name="kapper" value="daniëlle"> Daniëlle<br>
-                <input type="radio" name="kapper" value="sabine"> Sabine<br>
-                <input type="radio" name="kapper" value="jason"> Jason<br>
+                <input type="radio" name="kapper" value="Sigrid" required> Sigrid<br>
+                <input type="radio" name="kapper" value="Daniëlle"> Daniëlle<br>
+                <input type="radio" name="kapper" value="Sabine"> Sabine<br>
+                <input type="radio" name="kapper" value="Jason"> Jason<br>
             </form>
           </div>
 
@@ -163,11 +163,11 @@
                   </div>
                   <div class="email">
                       <label class="kop">Email: <font color="red">*</font></label><br>
-                      <input id="email" type="text" name="email" required><br>
+                      <input id="email" placeholder="abc@hairsal.com" type="text" name="email" required><br>
                   </div>
                   <div class="telefoonnummer">
                     <label class="kop">Telefoonnummer: <font color="red">*</font></label><br>
-                    <input id="telefoonnummer" type="number" name="telefoonnummer" required><br>
+                    <input id="telefoonnummer" placeholder="0612345678" type="number" name="telefoonnummer" required><br>
                   </div>
 
 
