@@ -25,6 +25,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1.css.bootstrap.min.css" rel="stylesheet">
     <link href="reservering/jquery.datetimepicker.min.css" rel="stylesheet">
 
+    <script src="js/myscripts.js"></script>
   </head>
   <body>
   
@@ -116,11 +117,11 @@
         
           <div class="behandelings_optie reserveer_nu">
               <h2>Kies uw behandeling</h2>
-            <select id="keuzes" class="keuzes" style="height: 30px; width: 305px;">
+            <select id="keuze_behandeling" class="keuzes" style="height: 30px; width: 305px;">
               <option value="selecteer">- Selecteer -</option>
               <option disabled class="niet_klikken">- Vrouw -</option>
-              <option id="normale_kapper" class="normale_kapper" value="one_choise_vrouw" >Wassen / knippen / drogen</option>
-              <option id="normale_kapper" class="normale_kapper" value="two_choise_vrouw">Wassen / Knippen / föhnen</option>
+              <option id="normale_kapper" value="one_choise_vrouw" >Wassen / knippen / drogen</option>
+              <option id="normale_kapper" value="two_choise_vrouw">Wassen / Knippen / föhnen</option>
               <option id="normale_kapper" value="three_choise_vrouw">Wassen / model föhnen</option>
               <option id="normale_kapper" value="four_choise_vrouw">Wassen / stylen</option>
               <option id="kleuren_kapper" value="five_choise_vrouw">Kleuren, nieuwe basiskleur</option>
@@ -137,7 +138,7 @@
             </select>
           </div>
 
-          <div id="kapper_optie" class="kapper_optie reserveer_nu">
+          <div id="keuze_kapper" class="kapper_optie reserveer_nu">
             <h2>Kies uw kapper</h2>
             <div id="sigrid"><input type="radio" name="kapper" value="sigrid"> Sigrid<br></div>
             <div id="daniëlle"><input type="radio" name="kapper" value="daniëlle"> Daniëlle<br></div>
@@ -151,22 +152,23 @@
               <form>
                   <div class="voornaam">
                       <label class="kop">Voornaam: <font color="red">*</font></label><br>
-                      <input type="text" name="voornaam" required><br>
+                      <input id="voornaam" type="text" name="voornaam" required><br>
                   </div>
                   <div class="achternaam">
                       <label class="kop">Achternaam: <font color="red">*</font></label><br>
-                      <input type="text" name="achternaam" required><br>
+                      <input id="achternaam"type="text" name="achternaam" required><br>
                   </div>
                   <div class="email">
                       <label class="kop">Email: <font color="red">*</font></label><br>
-                      <input type="text" name="email" required><br>
+                      <input id="email" type="text" name="email" required><br>
                   </div>
                   <div class="telefoonnummer">
                     <label class="kop">Telefoonnummer: <font color="red">*</font></label><br>
-                    <input type="number" name="telefoonnummer" required><br>
+                    <input id="telefoonnummer" type="number" name="telefoonnummer" required><br>
                   </div>
 
-                  <div class="datum_tijd">
+
+                  <div class="datum_tijd"> 
                     <label class="kop">Datum en tijd: <font color="red">*</font></label><br>
                     <input type="text" id="picker" class="form-control" style="width: 206px; height: 33px;" required>
                   </div>
@@ -177,7 +179,7 @@
                     <h7>* Betekend verpicht</h7>
                   </div>
                   <div class="submit">
-                    <input type="submit" value="Afspraak maken">
+                    <input type="submit" value="Afspraak maken" onclick="maak_afspraak();">
                   </div>
                   </form>
               </div>
