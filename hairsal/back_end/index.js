@@ -20,6 +20,12 @@ app.post('/afspraak', function(req, res) {
     res.json({'binnen': 'binn bericht'});
 });
 
+app.get('/bevestiging', function(req, res) {
+    script.retreive_afspraak(1, function (entry) {
+        res.json(entry)
+    });
+})
+    // res.redirect("index.html");
 
 
 

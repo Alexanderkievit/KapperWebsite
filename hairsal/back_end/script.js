@@ -1,13 +1,15 @@
+const mariadb = require('mariadb');
+const pool = mariadb.createPool({
+    host: 'localhost',
+    user: 'alexander',
+    password: 'root',
+    port: 3306,
+    database: 'kappersapp'
+});
+
 module.exports = {
     insert_afspraak: function (data) {
-        const mariadb = require('mariadb');
-        const pool = mariadb.createPool({
-            host: 'localhost',
-            user: 'alexander',
-            password: 'root',
-            port: 3306,
-            database: 'kappersapp'
-        });
+
         pool.getConnection()
             .then(conn => {
                 let first_name = data["first_name"];
@@ -23,5 +25,18 @@ module.exports = {
             .catch((error) => {
                 console.error('Error:', error);
             });
+    },
+    retreive_afspraak: function (id, cb) {
+        pool.getConnection()
+            .then(conn => {
+                conn.query("SELECT * FROM afspraak WHERE id_afspraak = (?);", [id]).then(entry => {
+                    conn.end()
+                    cb(entry)
+                })
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
     }
 }
