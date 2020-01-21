@@ -29,7 +29,6 @@
   </head>
   <body>
   
-  <div class="site-wrap">
 
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
@@ -94,10 +93,6 @@
       
     </header>
 
-  
-
-   
-
    
       <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/kapsalon1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -149,15 +144,18 @@
 
           <div class="gegevens reserveer_nu">
             <h2>Maak uw afspraak</h2>
+            <div class="verplicht">
+                <h7>* Betekend verplicht</h7>
+            </div>
             <div class="iets">
                <form>
                   <div class="voornaam">
                       <label class="kop">Voornaam: <font color="red">*</font></label><br>
-                      <input id="voornaam" type="text" name="voornaam" required><br>
+                      <input id="voornaam" maxlength="20" type="text" name="voornaam" required><br>
                   </div>
                   <div class="achternaam">
                       <label class="kop">Achternaam: <font color="red">*</font></label><br>
-                      <input id="achternaam"type="text" name="achternaam" required><br>
+                      <input id="achternaam" maxlength="20" type="text" name="achternaam" required><br>
                   </div>
                   <div class="email">
                       <label class="kop">Email: <font color="red">*</font></label><br>
@@ -165,7 +163,7 @@
                   </div>
                   <div class="telefoonnummer">
                     <label class="kop">Telefoonnummer: <font color="red">*</font></label><br>
-                    <input id="telefoonnummer" placeholder="0612345678" type="number" name="telefoonnummer" required><br>
+                    <input id="telefoonnummer" minlength="10" maxlength="11" placeholder="0612345678" type="number" name="telefoonnummer" required><br>
                   </div>
 
 
@@ -176,9 +174,7 @@
 
 
 
-                  <div class="verplicht">
-                    <h7>* Betekend verpicht</h7>
-                  </div>
+                  
                   <div class="submit">
                     <input type="submit" value="Afspraak maken" onclick="maak_afspraak();">
                   </div>
@@ -189,7 +185,6 @@
 
       
 
-      </div>  
 
 
 
@@ -229,7 +224,7 @@
 
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy;</script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>

@@ -124,14 +124,14 @@ h1, h2, h3, h4, h5,
 .site-footer {
   padding: 2em 0;
   background: #333333;
-  height: 320px; 
+  height: 270px; 
   margin-top: auto;
   margin-bottom: auto;
   align-content: center;
   }
     @media (min-width: 768px) {
     .site-footer {
-      padding: 4em 0; } }
+      padding: 3em 0; } }
   .site-footer p {
     color: #737373; }
   .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5 {
@@ -518,7 +518,7 @@ h1, h2, h3, h4, h5,
     width: 100%; }
   .site-blocks-cover, .site-blocks-cover .row {
     min-height: 500px;
-    height: calc(100vh - 73px); }
+    height: calc(100vh - 140px); }
   .site-blocks-cover.inner-page-cover, .site-blocks-cover.inner-page-cover .row {
     min-height: 500px;
     height: calc(30vh); }
