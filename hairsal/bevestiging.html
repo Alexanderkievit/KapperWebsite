@@ -90,10 +90,6 @@
       
     </header>
 
-  
-
-   
-
    
       <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/kapsalon1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -116,29 +112,34 @@
             <div class="reserveer_nu">
                 <form>
                     <label class="kop">Voornaam: </label><br>
-                    <input type="text" readonly><br>
+                    <input type="text" id="voornaam_be" readonly><br>
 
                     <label class="kop">Achternaam: </label><br>
-                    <input type="text" readonly><br>
+                    <input type="text" id="achternaam_be" readonly><br>
 
                     <label class="kop">Email: </label><br>
-                    <input type="text" readonly><br>
+                    <input type="text" id="email_be" readonly><br>
 
                     <label class="kop">Telefoonnummer: </label><br>
-                    <input type="number" readonly><br>
+                    <input type="number" id="telefoonnummer_be" readonly><br>
 
                     <label class="kop">Behandeling: </label><br>
-                    <input type="text" readonly><br>
+                    <input type="text" id="behandeling_be" readonly><br>
 
                     <label class="kop">Kapper: </label><br>
-                    <input type="text" readonly><br>
+                    <input type="text" id="kapper_be" readonly><br>
 
                     <label class="kop">Datum en tijd: </label><br>
-                    <input type="datetime" readonly><br>
+                    <input type="datetime" id="datum_tijd_be" readonly><br>
                     <br>
-                    <h4>Bedankt voor u afspraak. U krijgt nog een mailtje met een bevestiging toegestuurd.</h4>
+                    <!-- <h4>Bedankt voor u afspraak. U krijgt nog een mailtje met een bevestiging toegestuurd.</h4> -->
                     <br>
                 </form>
+
+                <div class="submit btn py-3">
+                    <input type="submit" value="Home" onclick="window.location.href='/index.html'">
+                  </div>
+
             </div>
           </div>
         </div>
@@ -198,6 +199,6 @@
   <script src="js/aos.js"></script>
 
   <script src="js/main.js"></script>
-    
+
   </body>
 </html>

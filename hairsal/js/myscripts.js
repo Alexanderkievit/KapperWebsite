@@ -23,6 +23,5 @@ function maak_afspraak() {
     }).then((data) => {
         console.log(data);
     });
-    res.redirect("index.html");
     return false;
 }

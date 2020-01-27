@@ -1091,15 +1091,12 @@ h1, h2, h3, h4, h5,
 .prijzen_links {
   text-align: left !important;
 }
-
 .prijzen_rechts {
   text-align: right !important;
 }
-
 .reserveer_nu {
   color: #000;
 }
-
 .afspraak_maken {
   text-align: auto;
   padding-left: 20px;

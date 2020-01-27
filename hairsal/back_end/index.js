@@ -7,25 +7,25 @@ app.use(bodyParser.json());
 
 var script = require('./script');
 
-app.set('views', './views')
-app.set('view engine', 'pug')
-app.use(cors())
+app.set('views', './views');
+app.set('view engine', 'pug');
+app.use(cors());
 
-app.use(express.static('./hairsal'))
+app.use(express.static('./hairsal'));
 
 app.post('/afspraak', function(req, res) {
-    var first_name = req.body.first_name;
+    var behandeling = req.body.keuze_behandeling;
+    var kapper = req.body.kapper;
+    var voornaam = req.body.voornaam;
+    var achternaam = req.body.achternaam;
+    var email = req.body.email;
+    var telefoonNum = req.body.telefoonnummer;
+    var dateTime = req.body.picker;
     console.log('Gelukt lekker bezig pik');
     script.insert_afspraak(req.body);
-    res.json({'binnen': 'binn bericht'});
+    res.redirect("/bevestiging.html?keuze_behandeling=" + behandeling + "?keuze_kapper=" + kapper + "?first_name=" + voornaam + "?last_name=" + achternaam + "? email=" + email + "?telefoonnummer=" + telefoonNum + "?datum_tijd=" + dateTime);
 });
 
-app.get('/bevestiging', function(req, res) {
-    script.retreive_afspraak(1, function (entry) {
-        res.json(entry)
-    });
-})
-    // res.redirect("index.html");
 
 
 

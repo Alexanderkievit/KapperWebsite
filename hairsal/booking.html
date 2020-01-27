@@ -107,8 +107,11 @@
       </div>  
 
 <!-- Afspraak maken -->
-      <div class="afspraak_maken">
-          <div class="behandelings_optie reserveer_nu">
+    <form method="POST" action="/afspraak">
+      
+        <div class="afspraak_maken">
+          
+            <div class="behandelings_optie reserveer_nu">
               <h2>Kies uw behandeling</h2>
             <select id="keuze_behandeling" class="keuzes" style="height: 30px; width: 305px;" required>
               <option value="selecteer">- Selecteer -</option>
@@ -131,14 +134,12 @@
             </select>
           </div>
 
-          <div class="kapper_optie reserveer_nu">
+          <div class="kapper_optie reserveer_nu" id="kapper">
               <h2>Kies uw kapper</h2>
-            <form id="keuze_kapper">
                 <input type="radio" name="kapper" value="Sigrid" required> Sigrid<br>
                 <input type="radio" name="kapper" value="Daniëlle"> Daniëlle<br>
                 <input type="radio" name="kapper" value="Sabine"> Sabine<br>
                 <input type="radio" name="kapper" value="Jason"> Jason<br>
-            </form>
           </div>
 
 
@@ -148,7 +149,6 @@
                 <h7>* Betekend verplicht</h7>
             </div>
             <div class="iets">
-               <form>
                   <div class="voornaam">
                       <label class="kop">Voornaam: <font color="red">*</font></label><br>
                       <input id="voornaam" maxlength="20" type="text" name="voornaam" required><br>
@@ -159,30 +159,25 @@
                   </div>
                   <div class="email">
                       <label class="kop">Email: <font color="red">*</font></label><br>
-                      <input id="email" placeholder="abc@hairsal.com" type="text" name="email" required><br>
+                      <input id="email" placeholder="abc@hairsal.com" type="email" name="email" required><br>
                   </div>
                   <div class="telefoonnummer">
                     <label class="kop">Telefoonnummer: <font color="red">*</font></label><br>
                     <input id="telefoonnummer" minlength="10" maxlength="11" placeholder="0612345678" type="number" name="telefoonnummer" required><br>
                   </div>
 
-
                   <div class="datum_tijd"> 
                     <label class="kop">Datum en tijd: <font color="red">*</font></label><br>
                     <input type="text" id="picker" class="form-control" style="width: 206px; height: 33px;" required>
                   </div>
 
-
-
-                  
-                  <div class="submit">
+                <div class="submit">
                     <input type="submit" value="Afspraak maken" onclick="maak_afspraak();">
-                  </div>
-              </form>
+                </div>
               </div>
           </div>
       </div>
-
+    </form>
       
     <footer class="site-footer">
       <div class="container">
@@ -237,7 +232,8 @@
   <script src="js/bootstrap-datepicker.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
-  
+
+
    <!--Date, Time picker  -->
    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

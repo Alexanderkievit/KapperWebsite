@@ -26,17 +26,4 @@ module.exports = {
                 console.error('Error:', error);
             });
     },
-    retreive_afspraak: function (id, cb) {
-        pool.getConnection()
-            .then(conn => {
-                conn.query("SELECT * FROM afspraak WHERE id_afspraak = (?);", [id]).then(entry => {
-                    conn.end()
-                    cb(entry)
-                })
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-
-    }
 }
