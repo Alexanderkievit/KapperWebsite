@@ -1124,3 +1124,15 @@ h1, h2, h3, h4, h5,
   padding-top: 10px;
   color: #ff0000;
 }
+.ingevoerd {
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+.bevestig {
+    color: #000000; 
+    font-weight: bold;
+}
+.bedankje {
+    color: #8BC34A;
+    font-weight: bold;
+}

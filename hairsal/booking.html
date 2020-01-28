@@ -112,8 +112,9 @@
         <div class="afspraak_maken">
           
             <div class="behandelings_optie reserveer_nu">
-              <h2>Kies uw behandeling</h2>
-            <select id="keuze_behandeling" class="keuzes" style="height: 30px; width: 305px;" required>
+              <h2>Kies uw behandeling</h2></div>
+              <div id="keuze_behandeling">
+            <select style="height: 30px; width: 305px;" required>
               <option value="selecteer">- Selecteer -</option>
               <option disabled class="niet_klikken">- Vrouw -</option>
               <option id="normale_kapper" value="Wassen knippen drogen vrouw" >Wassen / knippen / drogen</option>
@@ -132,7 +133,7 @@
               <option id="normale_kapper" value="Masker">Masker</option>
               <option id="normale_kapper" value="Wassen">Wassen</option>
             </select>
-          </div>
+          </divid="keuze_behandeling">
 
           <div class="kapper_optie reserveer_nu" id="kapper">
               <h2>Kies uw kapper</h2>
@@ -168,11 +169,11 @@
 
                   <div class="datum_tijd"> 
                     <label class="kop">Datum en tijd: <font color="red">*</font></label><br>
-                    <input type="text" id="picker" class="form-control" style="width: 206px; height: 33px;" required>
+                    <input type="text" id="picker" style="width: 206px; height: 33px;" required>
                   </div>
 
                 <div class="submit">
-                    <input type="submit" value="Afspraak maken" onclick="maak_afspraak();">
+                    <input type="submit" id="submit" value="Afspraak maken" onclick="maak_afspraak();">
                 </div>
               </div>
           </div>
@@ -233,6 +234,7 @@
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
 
+  <script src="js/myscripts.js"></script>
 
    <!--Date, Time picker  -->
    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

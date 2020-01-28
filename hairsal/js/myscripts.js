@@ -25,3 +25,7 @@ function maak_afspraak() {
     });
     return false;
 }
+
+function notDisable(){
+    document.getElementById('submit').removeAttribute('disabled');
+};

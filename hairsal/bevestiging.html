@@ -110,31 +110,30 @@
           <div class="col-md-6 col-lg-4">
             <h3 class="line-height-1 mb-3"><span class="d-block display-4 line-height-1 text-black">Uw gegevens & afspraak</span></h3>
             <div class="reserveer_nu">
-                <form>
-                    <label class="kop">Voornaam: </label><br>
-                    <input type="text" id="voornaam_be" readonly><br>
 
-                    <label class="kop">Achternaam: </label><br>
-                    <input type="text" id="achternaam_be" readonly><br>
+                    <label class="bevestig">Voornaam: </label>
+                    <li class="ingevoerd" id="voornaam_be"></li>
 
-                    <label class="kop">Email: </label><br>
-                    <input type="text" id="email_be" readonly><br>
+                    <label class="bevestig">Achternaam: </label>
+                    <li class="ingevoerd" id="achternaam_be"></li>
 
-                    <label class="kop">Telefoonnummer: </label><br>
-                    <input type="number" id="telefoonnummer_be" readonly><br>
+                    <label class="bevestig">Email: </label>
+                    <li class="ingevoerd" id="email_be"></li>
 
-                    <label class="kop">Behandeling: </label><br>
-                    <input type="text" id="behandeling_be" readonly><br>
+                    <label class="bevestig">Telefoonnummer: </label>
+                    <li class="ingevoerd" id="telefoonnummer_be"></li>
 
-                    <label class="kop">Kapper: </label><br>
-                    <input type="text" id="kapper_be" readonly><br>
+                    <label class="bevestig">Behandeling: </label>
+                    <li class="ingevoerd" id="behandeling_be"></li>
 
-                    <label class="kop">Datum en tijd: </label><br>
-                    <input type="datetime" id="datum_tijd_be" readonly><br>
+                    <label class="bevestig">Kapper: </label>
+                    <li class="ingevoerd" id="kapper_be"></li>
+
+                    <label class="bevestig">Datum en tijd: </label>
+                    <li class="ingevoerd" id="datum_tijd_be"></li>
                     <br>
-                    <!-- <h4>Bedankt voor u afspraak. U krijgt nog een mailtje met een bevestiging toegestuurd.</h4> -->
+                    <h4 class="bedankje" >Bedankt voor u afspraak.</h4>
                     <br>
-                </form>
 
                 <div class="submit btn py-3">
                     <input type="submit" value="Home" onclick="window.location.href='/index.html'">
@@ -200,5 +199,8 @@
 
   <script src="js/main.js"></script>
 
+  <script src="reservering/bevestigen.js"></script>
+  <script src="js/myscripts.js"></script>
+  
   </body>
 </html>
