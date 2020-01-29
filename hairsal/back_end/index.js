@@ -23,7 +23,7 @@ app.post('/afspraak', function(req, res) {
     var dateTime = req.body.picker;
     console.log('Gelukt lekker bezig pik');
     script.insert_afspraak(req.body);
-    res.redirect("/bevestiging.html?keuze_behandeling="+behandeling+"&keuze_kapper="+kapper+"&first_name="+voornaam+"&last_name="+achternaam+"&email="+email+"&telefoonnummer="+telefoonNum+"&datum_tijd="+dateTime);
+    res.redirect("/bevestiging.html?keuze_kapper="+kapper+"&keuze_behandeling="+behandeling+"&first_name="+voornaam+"&last_name="+achternaam+"&email="+email+"&telefoonnummer="+telefoonNum+"&datum_tijd="+dateTime);
 });
 
 

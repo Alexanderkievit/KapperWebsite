@@ -1102,13 +1102,14 @@ h1, h2, h3, h4, h5,
   padding-left: 20px;
 }
 .behandelings_optie {
-  padding: 20px 0px;
+  padding: 10px 0px;
 }
 .niet_klikken {
   font-weight: bold;
   color: #000000;
 }
 .kapper_optie {
+  padding-top: 10px;  
   padding-bottom: 20px;
 }
 .gegevens {
