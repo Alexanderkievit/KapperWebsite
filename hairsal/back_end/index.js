@@ -15,7 +15,7 @@ app.use(express.static('./hairsal'));
 
 app.get('/get_appointments', function (req, res) {
     let appointments = script.get_appointments(req.body).then((appointments) => {
-
+        console.log(appointments);
         res.json(appointments);
         console.log("Gelukt om te krijgen");
     });

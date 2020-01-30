@@ -15,7 +15,7 @@ module.exports = {
             pool.getConnection()
                 .then(conn => {
                     let keuze_kapper = data["keuze_kapper"];
-                    conn.query("SELECT datum_tijd FROM afspraak WHERE keuze_kapper = ?", [keuze_kapper])
+                    conn.query("SELECT * FROM afspraak")
                         .then((rows) => {
                             for (row of rows) {
                                 appointments.push(row);

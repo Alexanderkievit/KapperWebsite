@@ -44,31 +44,34 @@ function get_appointments() {
         body: JSON.stringify()
     }).then(v => v.json())
         .then(response => {
-            response = response.json();
-
+            console.log(response);
             var barber = document.querySelector('input[name="kapper"]:checked').value;
             var datum_tijd = document.getElementById("picker").value;
-            var selector = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-            var timesArray = [];
+            // var selector = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+            // var timesArray = [];
             var tijdenArray = [];
 
-            selector.forEach(tijdenEnable);
-            timesArray.forEach(mijnfunctie);
+            // selector.forEach(tijdenEnable);
+            // timesArray.forEach(mijnfunctie);
             response.forEach(myFunction);
 
-            function tijdenEnable(value) {
-                timesArray.push(datum_tijd.options[value].value);
-            }
-            function mijnfunctie(value) {
-                var eenKeuze = document.getElementById(value);
-                eenKeuze.disabled = false;
-            }
-            function myFunction(value) {
-                if (value.datum == datum_tijd) {
-                    if (value.kapper == barber) {
+            // function tijdenEnable(value) {
+            //     timesArray.push(datum_tijd.options[value].value);
+            // }
+            // function mijnfunctie(value) {
+            //     var eenKeuze = document.getElementById(value);
+            //     eenKeuze.disabled = false;
+            // }
+            function myFunction(value, index) {
+                console.log(response[index].datum_tijd)
+                console.log(value.keuze_kapper, barber, "hello llalala")
+                console.log(value.datum_tijd, datum_tijd, "blabla")
+                if (value.datum_tijd == datum_tijd) {
+                    if (value.keuze_kapper == barber) {
                         tijdenArray.push(value.datum_tijd);
                         tijdenArray.sort();
                         tijdenArray.forEach(tijdenDisable);
+                        
                     }
                 }
             }

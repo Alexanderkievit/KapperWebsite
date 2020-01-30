@@ -12,8 +12,8 @@ var logic = function(currentDateTime) {
 $('#picker').datetimepicker({
     timepicker: true,
     datepicker: true,
-    format: 'd-m-Y H:i', //formatTime
-    value: '1-2-2020 10:00', //defaultTime
+    format: 'd-m-Y H:i ', //formatTime
+    value: '1-2-2020 10:00 GMT+10', //defaultTime
     hours24: true, 
     step: 30,
     disabledWeekDays: [0],
@@ -21,6 +21,7 @@ $('#picker').datetimepicker({
     yearEnd: 2023,
     monthStart: 01,
     onChangeDateTime: logic,
-    onShow: logic
+    onShow: logic,
+    
 });
 
