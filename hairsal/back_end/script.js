@@ -1,4 +1,5 @@
 const mariadb = require('mariadb');
+var async = require('async');
 const pool = mariadb.createPool({
     host: 'localhost',
     user: 'alexander',
@@ -10,25 +11,26 @@ const pool = mariadb.createPool({
 module.exports = {
     get_appointments: async function (data) {
         let appointments = [];
-        pool.getConnection()
-            .then(conn => {
-                let keuze_kapper = data["keuze_kapper"];
-                conn.query("SELECT datum_tijd FROM afspraak WHERE keuze_kapper = ?", [keuze_kapper])
-                    .then((rows) => {
-                        for (row of rows) {
-                            appointments.push(row);
-                        }
-                        console.log(appointments);
-                        return appointments;
-                    })
-                    .catch((error) => {
-                        console.error('Error with rows:', error);
-                    });
-                conn.end();
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+        return new Promise(function (resolve, reject) {
+            pool.getConnection()
+                .then(conn => {
+                    let keuze_kapper = data["keuze_kapper"];
+                    conn.query("SELECT datum_tijd FROM afspraak WHERE keuze_kapper = ?", [keuze_kapper])
+                        .then((rows) => {
+                            for (row of rows) {
+                                appointments.push(row);
+                            }
+                            resolve(appointments);
+                        })
+                        .catch((error) => {
+                            console.error(error);
+                        });
+                    conn.end();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
     },
 
     insert_afspraak: function (data) {

@@ -13,21 +13,11 @@ app.use(cors());
 
 app.use(express.static('./hairsal'));
 
-app.get('/db_check', function (req, res) {
-
-    script.find().make(function (filter) {
-        filter.callback(function (err, response) {
-            res.json({ response })
-        });
-    });
-});
-
 app.get('/get_appointments', function (req, res) {
-    console.log("before call ");
     let appointments = script.get_appointments(req.body).then((appointments) => {
-        console.log("after call ");
-        console.log(appointments);
+
         res.json(appointments);
+        console.log("Gelukt om te krijgen");
     });
 });
 
@@ -39,4 +29,3 @@ app.post('/afspraak', function (req, res) {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}.`));
-
