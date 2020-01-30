@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- Date, Time picker -->
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1.css.bootstrap.min.css" rel="stylesheet"> -->
     <link href="reservering/jquery.datetimepicker.min.css" rel="stylesheet">
 
     <script src="js/myscripts.js"></script>
@@ -107,7 +106,7 @@
       </div>  
 
 <!-- Afspraak maken -->
-    <form method="POST" action="/afspraak">
+    <form>
       
         <div class="afspraak_maken">
           
@@ -134,7 +133,7 @@
             </select>
           </div>
 
-          <div class="kapper_optie reserveer_nu" id="kapper">
+          <div class="kapper_optie reserveer_nu" oninput="get_appointments()" id="kapper">
               <h2>Kies uw kapper</h2>
                 <input type="radio" name="kapper" value="Sigrid" required> Sigrid<br>
                 <input type="radio" name="kapper" value="Daniëlle"> Daniëlle<br>
@@ -172,7 +171,7 @@
                   </div>
 
                 <div class="submit">
-                    <input type="submit" id="submit" value="Afspraak maken" onclick="maak_afspraak();">
+                    <input type="submit" id="submit" value="Afspraak maken" onclick="maak_afspraak(); return false;">
                 </div>
               </div>
           </div>

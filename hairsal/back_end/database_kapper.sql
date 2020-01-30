@@ -18,5 +18,3 @@ CREATE TABLE afspraak (
 	telefoonnummer INTEGER NOT NULL,
 	datum_tijd DATETIME NOT NULL
 );
-
-

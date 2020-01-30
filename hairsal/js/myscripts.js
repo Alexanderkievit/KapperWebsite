@@ -21,7 +21,11 @@ function maak_afspraak() {
     }).then((response) => {
         return response.json();
     }).then((data) => {
-        console.log(data);
+        if (data['succes']) {
+            window.location.replace("/bevestiging.html?keuze_kapper=" + keuze_kapper + "&keuze_behandeling=" + keuze_behandeling + "&first_name=" + first_name + "&last_name=" + last_name + "&email=" + email + "&telefoonnummer=" + telefoonnummer + "&datum_tijd=" + datum_tijd);
+        } else {
+            console.log(data);
+        }
     });
     return false;
 }
@@ -29,3 +33,46 @@ function maak_afspraak() {
 function notDisable(){
     document.getElementById('submit').removeAttribute('disabled');
 };
+
+function get_appointments() {
+    fetch('http://localhost:5000/get_appointmens', {
+        method: 'GET',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        }).then(v => v.json())
+            .then(response => {
+            response = response.json();
+
+            var barber = document.querySelector('input[name="kapper"]:checked').value;
+            var datum_tijd = document.getElementById("picker").value;
+            var selector = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+            var timesArray = [];
+            var tijdenArray = [];
+        
+            selector.forEach(tijdenEnable);
+            timesArray.forEach(mijnfunctie);
+            response.forEach(myFunction);
+
+            function tijdenEnable(value) {
+                timesArray.push(datum_tijd.options[value].value);
+            }
+            function mijnfunctie(value) {
+                var eenKeuze = document.getElementById(value);
+                eenKeuze.disabled = false;
+            }
+            function myFunction(value) {
+                if (value.datum == datum_tijd){
+                    if (value.kapper == barber) {
+                        tijdenArray.push(value.datum_tijd);
+                        tijdenArray.sort();
+                        tijdenArray.forEach(tijdenDisable);
+                    }
+                }
+            }
+            // disable de tijden die bezit zijn
+            function tijdenDisable(value, index, array) {
+                var Occupied = document.getElementById(value);
+                Occupied.setAttribute("disabled", true);
+            }
+
+        });
+}

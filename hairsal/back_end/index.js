@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 const cors = require('cors');
-var bodyParser = require ('body-parser');
+var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -13,21 +13,28 @@ app.use(cors());
 
 app.use(express.static('./hairsal'));
 
-app.post('/afspraak', function(req, res) {
-    var behandeling = req.body.keuze_behandeling;
-    var kapper = req.body.kapper;
-    var voornaam = req.body.voornaam;
-    var achternaam = req.body.achternaam;
-    var email = req.body.email;
-    var telefoonNum = req.body.telefoonnummer;
-    var dateTime = req.body.picker;
-    console.log('Gelukt lekker bezig pik');
-    script.insert_afspraak(req.body);
-    res.redirect("/bevestiging.html?keuze_kapper="+kapper+"&keuze_behandeling="+behandeling+"&first_name="+voornaam+"&last_name="+achternaam+"&email="+email+"&telefoonnummer="+telefoonNum+"&datum_tijd="+dateTime);
+app.get('/db_check', function (req, res) {
+
+    script.find().make(function (filter) {
+        filter.callback(function (err, response) {
+            res.json({ response })
+        });
+    });
 });
 
+app.get('/get_appointments', function (req, res) {
+    console.log("before call ");
+    let appointments = script.get_appointments(req.body).then( (appointments) => {
+        console.log("after call ");
+        console.log(appointments);
+        res.json(appointments);    
+    });
+});
 
-
+app.post('/afspraak', function (req, res) {
+    script.insert_afspraak(req.body);
+    res.json({'succes': true});
+});
 
 const PORT = process.env.PORT || 5000;
 
