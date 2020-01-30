@@ -24,16 +24,16 @@ app.get('/db_check', function (req, res) {
 
 app.get('/get_appointments', function (req, res) {
     console.log("before call ");
-    let appointments = script.get_appointments(req.body).then( (appointments) => {
+    let appointments = script.get_appointments(req.body).then((appointments) => {
         console.log("after call ");
         console.log(appointments);
-        res.json(appointments);    
+        res.json(appointments);
     });
 });
 
 app.post('/afspraak', function (req, res) {
     script.insert_afspraak(req.body);
-    res.json({'succes': true});
+    res.json({ 'succes': true });
 });
 
 const PORT = process.env.PORT || 5000;

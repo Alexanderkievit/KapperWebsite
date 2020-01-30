@@ -5,8 +5,16 @@ var email = url.searchParams.get("email");
 var telefoonNum = url.searchParams.get("telefoonnummer");
 var behandeling = url.searchParams.get("keuze_behandeling");
 var kapper = url.searchParams.get("keuze_kapper");
-var dateTime = url.searchParams.get("datum_tijd");
 
+var om = "om";
+var omBold = om.bold();
+
+var dateTime = url.searchParams.get("datum_tijd");
+dateTime = dateTime.split(" ");
+let datum = dateTime[0];
+let tijd = dateTime[1];
+datum = datum.split('-');
+dateTime = datum[2] + "-" + datum[1] + "-" + datum[0] + " " + omBold + " " + tijd;
 
 // gegevens neerzetten
 var voornaamBe = document.getElementById("voornaam_be");
@@ -16,6 +24,7 @@ var telefoonnummerBe = document.getElementById("telefoonnummer_be");
 var behandelingBe = document.getElementById("behandeling_be");
 var kapperBe = document.getElementById("kapper_be");
 var datum_tijdBe = document.getElementById("datum_tijd_be");
+
 
 voornaamBe.innerHTML = voornaam;
 achternaamBe.innerHTML = achternaam;

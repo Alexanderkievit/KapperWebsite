@@ -29,11 +29,12 @@ function maak_afspraak() {
     });
     return false;
 }
-
+//Geen afspraak maken als nog niet alles is ingevuld
 function notDisable(){
     document.getElementById('submit').removeAttribute('disabled');
 };
 
+//Beschikbaarheid ophalen
 function get_appointments() {
     fetch('http://localhost:5000/get_appointmens', {
         method: 'GET',

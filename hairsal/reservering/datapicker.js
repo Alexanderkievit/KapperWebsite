@@ -13,7 +13,7 @@ $('#picker').datetimepicker({
     timepicker: true,
     datepicker: true,
     format: 'd-m-Y H:i', //formatTime
-    value: '1-2-2020 12:00', //defaultTime
+    value: '1-2-2020 10:00', //defaultTime
     hours24: true, 
     step: 30,
     disabledWeekDays: [0],
